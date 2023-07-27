@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Test GET Simple</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div id="loader" style="display:none;">Loading...</div>
+    <button onclick="http(event)" hs-method="get" hs-path="https://jsonplaceholder.typicode.com/posts"
+        hs-loader="#loader" hs-interceptor="addView">Send GET Request</button>
+    <div id="output"></div>
+</body>
+<script>
+    function addView(data) {
+        const view = document.getElementById("output");
+        for (var element in data) {
+            view.innerHTML += "<br>" + data[element].id;
+        }
+    }
+</script>
+<script src="./../dist/ahax.js"></script>
+
+</html>

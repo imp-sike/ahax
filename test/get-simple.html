@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test GET Simple</title>
+</head>
+<body>
+    <div id="loader" style="display:none;">Loading...</div>
+    <button 
+        onclick="http(event)"
+        hs-method="get"
+        hs-path="https://jsonplaceholder.typicode.com/posts/1"
+        hs-target="#output"
+        hs-loader="#loader"
+    >Send GET Request</button>
+    <div id="output"></div>
+</body>
+<script src="./../dist/ahax.js"></script>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Test GET Form</title>
+</head>
+
+<body>
+    <div id="loader" style="display:none;">Loading...</div>
+
+    <form onsubmit="http(event)" hs-loader="#loader" hs-method="put"
+        hs-path="https://jsonplaceholder.typicode.com/posts/1" hs-target="#output">
+        <input type="text" name="name" value="John Doe">
+        <input type="email" name="email" value="john.doe@example.com">
+        <button type="submit">Send PUT Request</button>
+    </form>
+    <div id="output"></div>
+</body>
+<script src="./../dist/ahax.js"></script>
+
+</html>
