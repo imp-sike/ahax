@@ -96,6 +96,18 @@ You can customize the view by using an interceptor function. The interceptor wil
 <script src="./path/to/ahax.js"></script>
 ```
 
+### using `hs-headers`
+```html
+<button 
+        onclick="http(event)"
+        hs-method="get"
+        hs-path="https://jsonplaceholder.typicode.com/posts/1"
+        hs-target="#output"
+        hs-loader="#loader"
+        hs-headers='{"Authorization": "Bearer YOUR_ACCESS_TOKEN"}'
+    >Send GET Request</button>
+```
+
 ### Supported Attributes
 
 - `hs-method`: Specifies the HTTP method (GET, POST, DELETE, PUT).
@@ -103,6 +115,26 @@ You can customize the view by using an interceptor function. The interceptor wil
 - `hs-target`: The HTML element where the response will be displayed.
 - `hs-loader`: The HTML element used as a loader during the HTTP request.
 - `hs-interceptor`: The name of the function to be used as an interceptor for custom view updates.
+- `hs-headers`: Allow users to specify custom headers for their HTTP requests.  that takes a JSON object representing the headers to be sent with the request.
+
+### TODO
+
+1. **Request Headers (DONE)**: Allow users to specify custom headers for their HTTP requests. This can be achieved by introducing a new custom attribute like `hs-headers` that takes a JSON object representing the headers to be sent with the request.
+
+2. **Request Timeout**: Allow users to set a timeout for their HTTP requests. You can introduce a new attribute like `hs-timeout` to specify the maximum time allowed for the request to complete before it times out.
+
+3. **Success and Error Handling**: Implement custom attributes like `hs-success` and `hs-error` that take the names of functions to be executed on successful responses and error responses, respectively. This way, users can define custom handling logic based on the request outcome.
+
+4. **Request Interceptors**: Create a custom attribute like `hs-request-interceptor` that points to a function to be executed before the HTTP request is made. This interceptor function can be used to modify the request data or headers dynamically.
+
+5. **Response Interceptors**: Introduce a custom attribute like `hs-response-interceptor` that points to a function to be executed after the HTTP response is received. This interceptor function can handle the response data before it is passed to the view.
+
+6. **Data Binding**: Enable data binding for input elements. Users can set a custom attribute like `hs-bind` on input elements and specify the key that corresponds to the data to be sent in the request payload.
+
+7. **Response Validation**: Implement a custom attribute like `hs-validate` that takes a regular expression to validate the response data before updating the view. This can help ensure that the received data meets certain criteria before rendering it.
+
+8. **Request Cancellation**: Allow users to cancel an ongoing request by introducing a custom attribute like `hs-cancelable`. This can be useful in scenarios where users want to prevent a request from completing if certain conditions are met.
+
 
 ## License
 
