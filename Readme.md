@@ -13,6 +13,10 @@ To use AHAX in your project, follow these simple steps:
    ```html
    <script src="./path/to/ahax.js"></script>
    ```
+or use a cdn:
+```html
+<script src="https://cdn.jsdelivr.net/gh/imp-sike/ahax/dist/ahax.js"></script>
+```
 
 ## How to Use
 
